@@ -13,23 +13,13 @@ export const metadata: Metadata = {
   title: "Smart Fridge Project - Gestion de Projet Académique",
   description:
     "Planification complète d'un réfrigérateur intelligent connecté de nouvelle génération. Projet académique de gestion couvrant analyse de marché, planification technique, budget de 362 200 €, et roadmap sur 38 semaines.",
-  generator: "v0.app",
   icons: {
     icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
       {
         url: "/icon.svg",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
   },
 }
 

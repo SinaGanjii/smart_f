@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, BarChart3, Users, DollarSign, Shield, Target, Calendar } from "lucide-react"
+import { ArrowRight, BarChart3, Users, DollarSign, Shield, Target, Calendar, Code, GraduationCap, Award } from "lucide-react"
 
 export default function HomePage() {
   return (
@@ -118,6 +118,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Team Section */}
+      <section className="py-20">
+        <div className="container-custom">
+          <div className="mb-12 text-center">
+            <div className="mb-4 inline-flex items-center justify-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+              <Award className="h-4 w-4" />
+              Équipe du Projet
+            </div>
+            <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Développé par</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Projet académique réalisé par une équipe dédiée et passionnée
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+            <TeamMemberCard
+              name="Sina Ganji"
+              role="Développeur & Concepteur"
+              description="Spécialisé en développement web, architecture système et gestion de projet"
+              icon={<Code className="h-6 w-6" />}
+              gradient="from-blue-500 to-cyan-500"
+            />
+            <TeamMemberCard
+              name="Youssef El-Baz"
+              role="Développeur & Analyste"
+              description="Expert en analyse de données, développement full-stack et planification technique"
+              icon={<GraduationCap className="h-6 w-6" />}
+              gradient="from-purple-500 to-pink-500"
+            />
+          </div>
+          <div className="mt-12 text-center">
+            <p className="text-sm text-muted-foreground">
+              Projet académique de gestion de projet • Smart Fridge Project
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Navigation Cards */}
       <section className="py-20 bg-muted/30">
         <div className="container-custom">
@@ -175,6 +212,36 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+    </div>
+  )
+}
+
+function TeamMemberCard({
+  name,
+  role,
+  description,
+  icon,
+  gradient,
+}: {
+  name: string
+  role: string
+  description: string
+  icon: React.ReactNode
+  gradient: string
+}) {
+  return (
+    <div className="group relative bg-card rounded-xl border border-border p-8 hover:shadow-xl transition-all overflow-hidden">
+      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity`} />
+      <div className="relative">
+        <div className={`mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br ${gradient} text-white shadow-lg`}>
+          {icon}
+        </div>
+        <h3 className="mb-2 text-2xl font-bold">{name}</h3>
+        <div className="mb-4 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+          {role}
+        </div>
+        <p className="text-muted-foreground leading-relaxed">{description}</p>
+      </div>
     </div>
   )
 }
